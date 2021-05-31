@@ -1,0 +1,7 @@
+#!/bin/sh
+set -euf
+
+name="$1"
+brew uninstall --force "$name"
+rm -rf "$(brew --prefix)/Caskroom/$name"
+brew reinstall --force "$name"
